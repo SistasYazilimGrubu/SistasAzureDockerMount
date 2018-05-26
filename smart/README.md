@@ -1,2 +1,0 @@
-# SistasAzureDockerMount
-SistasAzureDockerMount
