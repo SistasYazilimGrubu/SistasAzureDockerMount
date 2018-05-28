@@ -1,0 +1,928 @@
+
+
+
+
+/* ==========================================================================
+Hide ng-cloak on page load, https://docs.angularjs.org/api/ng/directive/ngCloak
+========================================================================== */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+/* ==========================================================================
+Development Ribbon
+========================================================================== */
+.ribbon {
+    background-color: rgba(170, 0, 0, 0.5);
+    right: -115px;
+    moz-transform: rotate(45deg);
+    ms-transform: rotate(45deg);
+    o-transform: rotate(45deg);
+    webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    overflow: hidden;
+    position: fixed;
+    top: 80px;
+    white-space: nowrap;
+    width: 300px;
+    z-index: 1030;
+    pointer-events: none;
+    opacity: 0.75;
+    line-height: 0.4em;
+}
+
+.ribbon a {
+    color: #fff;
+    display: block;
+    font-weight: 400;
+    margin: 1px 0;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 5px #444;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+Version number in navbar
+========================================================================== */
+.navbar-version {
+    font-size: 10px;
+    color: darkgrey;
+}
+
+/* ==========================================================================
+navbar text
+========================================================================== */
+.navbar-default .navbar-brand {
+    color: #FFF;
+}
+
+/* ==========================================================================
+Browser Upgrade Prompt
+========================================================================== */
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+Logo styles
+========================================================================== */
+
+.navbar-brand.logo {
+    padding: 15px !important;
+    font-weight: 400;
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .navbar-long-menu {
+        overflow-y: scroll;
+        height: 500px;
+    }
+}
+
+.logo .logo-img {
+    height: 45px;
+    display: inline-block;
+}
+
+/* ==========================================================================
+Main page styles
+========================================================================== */
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.hipster {
+    display: inline-block;
+    width: 347px;
+    height: 497px;
+    background: url("../images/hipster.png") no-repeat center top;
+    background-size: contain;
+}
+
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+    .hipster {
+        background: url("../images/hipster2x.png") no-repeat center top;
+        background-size: contain;
+    }
+}
+
+/* ==========================================================================
+Generic styles
+========================================================================== */
+.error {
+    color: white;
+    background-color: red;
+}
+
+.pad {
+    padding: 10px;
+}
+
+.break {
+    white-space: normal;
+    word-break:break-all;
+}
+
+.voffset  { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 15px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
+
+.readonly {
+    background-color: #eee;
+    opacity: 1;
+}
+
+/* ==========================================================================
+make sure browsers use the pointer cursor for anchors, even with no href
+========================================================================== */
+a {
+    color: #2196F3;
+}
+
+a:hover, .hand, [jh-sort-by] {
+    cursor: pointer;
+}
+
+/* ==========================================================================
+Metrics and Health styles
+========================================================================== */
+#threadDump .popover, #healthCheck .popover {
+    top: inherit;
+    display: block;
+    font-size: 10px;
+    max-width: 1024px;
+}
+
+#healthCheck .popover {
+    margin-left: -50px;
+}
+
+.health-details {
+    min-width: 400px;
+}
+
+/* ==========================================================================
+start Password strength bar style
+========================================================================== */
+ul#strengthBar {
+    display:inline;
+    list-style:none;
+    margin:0;
+    margin-left:15px;
+    padding:0;
+    vertical-align:2px;
+}
+
+.point:last {
+    margin:0 !important;
+}
+.point {
+    background:#DDD;
+    border-radius:2px;
+    display:inline-block;
+    height:5px;
+    margin-right:1px;
+    width:20px;
+}
+
+/* ==========================================================================
+Custom alerts for notification
+========================================================================== */
+.alerts {
+    z-index: 9999;
+    position: fixed;
+    width: 40%;
+    bottom: 10px;
+    left: 15px;
+}
+
+.alerts .alert{
+    text-overflow: ellipsis;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.alert pre{
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.alert .popover pre {
+    font-size: 10px;
+}
+
+.alerts .toast {
+    position: fixed;
+    width: 100%;
+}
+
+.alerts .toast.left {
+    left: 5px;
+}
+
+.alerts .toast.right {
+    right: 5px;
+}
+
+.alerts .toast.top {
+    top: 55px;
+}
+
+.alerts .toast.bottom {
+    bottom: 55px;
+}
+
+@media screen and (min-width: 480px) {
+    .alerts .toast {
+        width: 50%;
+    }
+}
+
+/* ==========================================================================
+entity tables helpers
+========================================================================== */
+/* Remove Bootstrap padding from the element
+   http://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3 */
+.no-padding-left { padding-left: 0 !important; }
+.no-padding-right { padding-right: 0 !important; }
+.no-padding-top { padding-top: 0 !important; }
+.no-padding-bottom { padding-bottom: 0 !important; }
+.no-padding { padding: 0 !important; }
+
+/* bootstrap 3 input-group 100% width
+   http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
+.width-min { width: 1% !important; }
+
+/* Makes toolbar not wrap on smaller screens
+ http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
+.flex-btn-group-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.td-btn-group {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    margin: 0 !important;
+}
+
+.jh-table > tbody > tr > td {
+    /* Align text in td vertically (top aligned by Bootstrap) */
+    vertical-align: middle;
+}
+
+.jh-table > thead > tr > th > .glyphicon-sort, .jh-table > thead > tr > th > .glyphicon-sort-by-attributes, .jh-table > thead > tr > th > .glyphicon-sort-by-attributes-alt {
+    /* less visible sorting icons */
+    opacity: 0.5;
+}
+
+.jh-table > thead > tr > th > .glyphicon-sort:hover, .jh-table > thead > tr > th > .glyphicon-sort-by-attributes:hover, .jh-table > thead > tr > th > .glyphicon-sort-by-attributes-alt:hover {
+    /* full visible sorting icons and pointer when mouse is over them */
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+entity detail page css
+========================================================================== */
+.dl-horizontal.jh-entity-details > dd {
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .dl-horizontal.jh-entity-details > dt {
+        margin-bottom: 15px;
+    }
+
+    .dl-horizontal.jh-entity-details > dd {
+        border-bottom: 1px solid #eee;
+        padding-left: 180px;
+        margin-left: 0;
+    }
+}
+
+/* ==========================================================================
+ui bootstrap tweaks
+========================================================================== */
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+.datetime-picker-dropdown > li.date-picker-menu div > table .btn-default,
+.uib-datepicker-popup  > li > div.uib-datepicker > table .btn-default {
+    border: 0;
+}
+
+.datetime-picker-dropdown > li.date-picker-menu div > table:focus,
+.uib-datepicker-popup  > li > div.uib-datepicker > table:focus {
+    outline: none;
+}
+
+
+
+
+/* ==========================================================================
+Fix error field display
+========================================================================== */
+.form-group .help-block {
+    position: static;
+}
+
+/* jhipster-needle-css-add-main JHipster will add new css style */
+
+body .container .well, body .container-fluid .well, body .container .jumbotron, body .container-fluid .jumbotron, nav {
+    -webkit-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
+}
+
+/**/
+
+ .smart-form .form-group {
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+}
+
+.form-group .smart-input {
+    margin-bottom: 0 !important;
+}
+
+/*.btn {
+    text-transform: none !important;
+}*/
+
+/**/
+
+.nav-tabs {
+    border: 0;
+    padding: .7rem;
+    margin-bottom: -20px;
+    background-color: #2bbbad;
+    z-index: 2;
+    position: relative;
+    border-radius: 2px;
+}
+
+.nav-tabs li.active {
+    background-color: rgba(255,255,255,.2) !important;
+    color: #fff;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    border-radius: 2px;
+}
+
+[class^="ti-"] {
+     line-height: unset !important;
+}
+
+.management-left-panel .list-group-item {
+    padding: 16px 16px !important;
+    word-break: break-all;
+    -webkit-transition: .5s;
+    transition: .5s;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.management-left-panel .list-group-item .badge {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.list-group .list-group-item.active:hover, .list-group .list-group-item.active:focus {
+    outline: none !important;
+}
+
+.btn:not(.btn-fab) {
+    font-size: 13px;
+}
+
+.modal-xl {
+    width: 95%;
+}
+
+.dropdown:hover .open-on-hover {
+    display: block !important;
+}
+
+.d-block {
+    display: block;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .5em;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 3px;
+    font-weight: 400;
+    line-height: 1.3;
+    font-size: 85%;
+}
+
+.badge-info {
+    background-color: #4fadff !important;
+    color: #fff !important;
+}
+
+.badge-success {
+    background-color: #38d996 !important;
+    color: #fff !important;
+}
+
+.badge-danger {
+    background-color: #ff6382 !important;
+    color: #fff !important;
+}
+
+.badge-warning {
+    background-color: #ffab9d !important;
+    color: #fff !important;
+}
+
+.badge-default {
+    background-color: #e4e7ea !important;
+    color: #000 !important;
+}
+
+.badge-active {
+    background-color: #4fadff !important;
+    color: #fff !important;
+}
+
+.badge-passive {
+    background-color: #CACAC8 !important;
+    color: #fff !important;
+}
+
+.smart-logo {
+    
+}
+
+.smart-text {
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 35px !important;
+}
+
+.popover-title {
+    background-color: white;
+    color: #000000 !important; /*black color*/
+}
+
+
+.list-group-horizontal .list-group-item {
+    display: inline-block;
+}
+.list-group-horizontal .list-group-item {
+    margin-bottom: 0;
+    margin-left:-4px;
+    margin-right: 0;
+}
+.list-group-horizontal .list-group-item:first-child {
+    border-top-right-radius:0;
+    border-bottom-left-radius:4px;
+}
+.list-group-horizontal .list-group-item:last-child {
+    border-top-right-radius:4px;
+    border-bottom-left-radius:0;
+}
+
+.btn.btn-fab.btn-fab-xs, .input-group-btn .btn.btn-fab.btn-fab-xs, .btn-group-sm .btn.btn-fab, .btn-group-sm .input-group-btn .btn.btn-fab {
+    height: 30px;
+    min-width: 30px;
+    width: 30px;
+    font-size: 18px;
+}
+
+.btn-fab-xs > i[class^="ti-"] {
+    font-size: 14px !important;
+}
+
+.popover {
+    background: white !important;
+    color: inherit !important;
+    z-index: 2000;
+}
+
+.popover h4 {
+    margin-bottom: 20px;
+}
+
+.pb-0 .form-group {
+    padding-bottom: 0 !important;
+}
+
+/* ngtagsinput material */
+
+tags-input .tags {
+    background-color: #fff;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+tags-input .host {
+     /*position: unset !important;
+     margin-top: 5px;
+     margin-bottom: 5px;
+     height: 100%;*/
+    margin: 0 !important;
+}
+
+tags-input .tags .tag-item {
+    font: inherit !important;
+    font-size: 14px !important;
+    height: 23px !important;
+    line-height: 23px !important;
+    background: white !important;
+    margin: 0 5px 0 0 !important;
+}
+
+tags-input .tags .input {
+    font: inherit !important;
+    font-size: 14px !important;
+    height: 22px !important;
+    line-height: 20px !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+a.remove-button:hover {
+    text-decoration: none !important;
+    color: #ff0000 !important;
+}
+
+/**/
+
+.modal-footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/**/
+
+label.require::after, label.require::after {
+    content: '*';
+    color: #f96868;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+/**/
+
+.input-group-append {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /*margin-left: -1px;*/
+}
+
+.input-group .input-group-append .btn-light:first-of-type {
+    margin-left: 1rem;
+}
+
+.input-group-append .btn-light {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-light {
+    background-color: #fcfdfe;
+    border-color: #ebebeb;
+    color: #8b95a5;
+    font-size: 14px;
+    padding: 5px 16px;
+    line-height: inherit;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    outline: none !important;
+    -webkit-transition: 0.15s linear;
+    transition: 0.15s linear;
+    border: 1px solid transparent;
+}
+
+.input-group-input {
+    position: relative;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+/*
+.input-group {
+    position: relative;
+    padding-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}*/
+
+input, select, textarea {
+    font-size: 14px !important;
+}
+
+textarea {
+    min-height: 38px !important;
+}
+
+.btn {
+    text-transform: none !important;
+    font-weight: inherit !important;
+}
+
+.d-flex {
+    display: flex !important;
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.p-relative {
+    position: relative !important;
+}
+
+::-webkit-input-placeholder {
+    font-size: 14px!important;
+}
+
+/* Firefox 18- */
+:-moz-placeholder {
+    font-size: 12px!important;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+    font-size: 12px!important;
+}
+
+:-ms-input-placeholder {
+    font-size: 12px!important;
+}
+
+.btn-refresh-container {
+    position: absolute !important;
+    right: 20px !important;
+}
+
+.btn-refresh {
+    color: white !important;
+}
+
+.pagination > .active > a {
+    background-color: #2196F3 !important;
+    border-color: #2196F3 !important;
+}
+
+.btn {
+    -webkit-transition: 0.3s !important;
+    transition: 0.3s !important;
+    /*background-color: #F5F7FA !important;*/
+    /*border: 1px solid transparent !important;*/
+}
+
+/*.btn:hover {
+    background: transparent !important;
+    box-shadow: 0 5px 10px 0 rgba(69, 129, 208, 0.12) !important;
+}
+
+.btn-primary:hover {
+    border: 1px solid #2196F3 !important;
+}
+
+.btn-info:hover {
+    border: 1px solid #4A89DC !important;
+}
+
+.btn-danger:hover {
+    border: 1px solid #f44336 !important;
+}*/
+
+.btn, .btn-group {
+    margin: 0 1px !important;
+}
+
+.tab-pane > .row > .col-md-4, .tab-pane > .row > .col-md-8 {
+    margin: 0 !important;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.tab-pane > .row > .col-md-4 {
+    padding: 0 0 0 15px !important;
+}
+
+.tab-pane > .row > .col-md-8 {
+    padding: 0 15px 0 0 !important;
+}
+
+.disabled .ripple-container {
+    display: none !important;
+}
+
+.caret {
+    margin-top: -1px;
+}
+
+.alert-wrapper {
+	position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 40%;
+}
+
+.alert {
+	border-radius: 3px;
+	position: relative;
+	padding: 1.5rem 2rem;
+	padding-right: 5rem;
+	border: none;
+	margin: 0 !important;
+}
+
+.alert button.close {
+	font-family: Roboto,sans-serif;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.5rem 2rem;
+    color: inherit;
+	background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+	font-weight: 300 !important;
+	font-size: 18px;
+	text-shadow: none !important;
+    opacity: .5;
+	-webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+.alert button.close:hover {
+	text-decoration: none;
+    opacity: 1;
+}
+
+.alert.alert-success {
+    color: #155724 !important;
+    background-color: #d4edda !important;
+}
+
+.alert.alert-warning {
+	color: #856404 !important;
+    background-color: #fff3cd !important;
+}
+
+.alert.alert-danger {
+	color: #721c24 !important;
+    background-color: #f8d7da !important;
+}
+
+.alert.alert-info {
+    color: #004085 !important;
+    background-color: #cce5ff !important;
+}
+
+/* Material Switch */
+
+.material-switch > input[type="checkbox"] {
+    display: none;
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0;
+    position: relative;
+    width: 40px;
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}
+
+.no-select {
+    user-select: none !important;
+    -moz-user-select: none !important;
+    -webkit-user-select: none !important;
+    -ms-user-select: none !important;
+}
+
+.topbar-divider {
+    border-left: 1px solid grey;
+    height: 20px;
+    -ms-grid-row-align: center;
+    align-self: center;
+    margin: 20px 12px 0;
+}
+
+.tooltip-inner {
+    font-family: inherit, sans-serif !important;
+    max-width: 30em !important;
+    text-align: unset !important;
+    word-break: break-all;
+}
+
+.tooltip.fade.in {
+    animation: fadeIn 0.5s;
+}
+
+.tooltip.fade:not(.in) {
+    animation: fadeOut 0.25s;
+}
+
+/**/

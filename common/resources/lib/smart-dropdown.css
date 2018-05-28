@@ -1,0 +1,123 @@
+.smart-dropdown-menu {
+    position: absolute;
+    display: none;
+    float: left;
+    /*min-width: 10rem;*/
+    margin: .125rem 0 0;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    color: #4d5259;
+    border-radius: 2px;
+    font-size: 13px;
+    border-color: #f1f2f3;
+    padding: 0;
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.06);
+    box-shadow: 0 0 4px rgba(0,0,0,0.06);
+    z-index: 999;
+}
+
+.smart-dropdown-header {
+    display: block;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #8b95a5;
+    font-size: 12px;
+    margin-bottom: 0;
+    padding: 12px;
+    letter-spacing: .25px;
+    opacity: 0.8;
+}
+
+.navbar .smart-dropdown-item i {
+    margin-right: 5px !important;
+}
+
+.smart-dropdown-item {
+    color: #60666f;
+    font-weight: 300;
+    font-size: inherit !important;
+    padding: 12px 20px !important;
+    width: auto;
+    margin: 4px;
+    -webkit-transition: 0.15s linear;
+    transition: 0.15s linear;
+    display: block;
+    clear: both;
+    text-align: inherit;
+    white-space: nowrap;
+    background: 0 0;
+    border: 0;
+}
+
+.smart-dropdown-menu > li.active > a.smart-dropdown-item {
+    color: #4d5259 !important;
+    background-color: #f5f6f7 !important;
+    text-decoration: none !important;
+}
+
+/*.smart-dropdown-menu > li > a:not(.ms-tools) {
+    color: #60666f;
+    font-weight: 300;
+    padding: 4px 12px;
+    width: auto;
+    margin: 4px;
+    -webkit-transition: 0.15s linear;
+    transition: 0.15s linear;
+    display: block;
+    clear: both;
+    text-align: inherit;
+    white-space: nowrap;
+    background: 0 0;
+    border: 0;
+}*/
+
+.smart-dropdown-menu-dropdown-menu > li > a.ms-tools {
+    padding: 3px 5px;
+}
+
+.smart-dropdown-item.active, .smart-dropdown-item:active {
+    color: #4d5259 !important;
+    background-color: #f5f6f7 !important;
+    text-decoration: none !important;
+}
+
+.smart-dropdown-item:hover {
+    color: #4d5259 !important;
+    background-color: #f5f6f7 !important;
+    text-decoration: none !important;
+    background-image: none !important;
+}
+
+.smart-dropdown-divider {
+    background-color: #f1f2f3;
+    margin: 4px 0;
+    overflow: hidden;
+    border-top: 1px solid #e9ecef;
+    height: 0;
+}
+
+.smart-dropdown-menu-left {
+    position: absolute;
+    top: 100%;
+    display: none;
+    float: left;
+    margin: .125rem 0 0;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    color: #4d5259;
+    border-radius: 2px;
+    font-size: 13px;
+    border-color: #f1f2f3;
+    padding: 0;
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.06);
+    box-shadow: 0 0 4px rgba(0,0,0,0.06);
+    z-index: 3;
+    right: 0;
+    left: auto;
+}

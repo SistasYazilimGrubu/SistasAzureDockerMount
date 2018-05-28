@@ -1,6 +1,6 @@
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" class="${properties.kcHtmlClass!}">
+<html xmlns="http://www.w3.org/1999/xhtml" class="login-pf">
 
 <head>
     <meta charset="utf-8">
@@ -31,71 +31,79 @@
     </#if>
 </head>
 
-<body class="${properties.kcBodyClass!}">
-    <div id="kc-logo"><a href="${properties.kcLogoLink!'#'}"><div id="kc-logo-wrapper"></div>${realm.displayName!''}</a></div>
+<body class="smart-body">
+    <div id="kc-logo" class="smart-logo">
+		<a target="_blank" href="${properties.kcLogoLink!'#'}">
+			<div id="kc-logo-wrapper" class="smart-logo-wrapper animated fadeIn delayed_025s"></div>
+		</a>
+	</div>
 
-    <div id="kc-container" class="${properties.kcContainerClass!}">
-        <div id="kc-container-wrapper" class="${properties.kcContainerWrapperClass!}">
+    <div id="kc-container" class="smart-container">
+        <div id="kc-container-wrapper" class="smart-container-wrapper animated fadeIn delayed_05s">
 
-            <div id="kc-header" class="${properties.kcHeaderClass!}">
-                <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"><#nested "header"></div>
+            <div id="kc-header" class="smart-header">
+				<div class="row" style="margin-top: 15px; margin-bottom: 20px;">
+					<div class="col-md-8">
+						<div id="kc-header-wrapper" class="smart-header-wrapper animated fadeInUp delayed_025s"><#nested "header"></div>
+					</div>
+					<div class="col-md-4">
+						<#if realm.internationalizationEnabled>
+							<div id="kc-locale" class="smart-locale">
+								<div id="kc-locale-wrapper" class="smart-locale-wrapper">
+									<div id="kc-locale-dropdown" class="smart-locale-dropdown">
+										<a href="#" id="kc-current-locale-link" class="smart-current-locale-link dropdown">
+											<span>
+												<i class="ti-world"></i>&nbsp;
+												<span>${locale.current}</span>
+												<span class="caret"></span>
+											</span>
+										</a>
+										<ul class="smart-dropdown-menu">
+											<#list locale.supported as l>
+												<li><a class="smart-dropdown-item" href="${l.url}">${l.label}</a></li>
+											</#list>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</#if>
+					</div>
+				</div>
             </div>
 
-            <#if realm.internationalizationEnabled>
-                <div id="kc-locale" class="${properties.kcLocaleClass!}">
-                    <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
-                        <div class="kc-dropdown" id="kc-locale-dropdown">
-                            <a href="#" id="kc-current-locale-link">${locale.current}</a>
-                            <ul>
-                                <#list locale.supported as l>
-                                    <li class="kc-dropdown-item"><a href="${l.url}">${l.label}</a></li>
-                                </#list>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </#if>
-
-            <div id="kc-content" class="${properties.kcContentClass!}">
-                <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
-                    <#if displayMessage && message?has_content>
-                        <div class="${properties.kcFeedbackAreaClass!}">
-                            <div class="alert alert-${message.type}">
-                                <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-                                <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-                                <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
-                                <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-                                <span class="kc-feedback-text">${message.summary}</span>
-                            </div>
-                        </div>
-                    </#if>
-
-                    <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                        <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                            <#nested "form">
-                        </div>
-                    </div>
-
-                    <#if displayInfo>
-                        <div id="kc-info" class="${properties.kcInfoAreaClass!}">
-                            <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
-                                <#nested "info">
-                            </div>
-                        </div>
-                    </#if>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-89546440-1', 'auto');
-      ga('send', 'pageview');
-    </script>
+            <div id="kc-content" class="smart-content">
+				<div id="kc-form" class="kc-form">
+					<div id="kc-form-wrapper" class="smart-form-wrapper">
+						<#nested "form">
+					</div>
+				</div>
+				<#if displayInfo>
+					<div id="kc-info" class="smart-info details">
+						<div id="kc-info-wrapper" class="smart-info-wrapper">
+							<#nested "info">
+						</div>
+					</div>
+				</#if>
+			</div>
+		</div>
+	</div>
+		
+		<#if displayMessage && message?has_content>
+			<div id="kc-content-wrapper" class="smart-content-wrapper">
+				<div class="smart-feedback alert-wrapper col-md-4">
+					<div class="alert alert-${message.type} animated flipInX delayed_05s">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<#if message.type = 'success'><i class="ti-check"></i>&nbsp;</#if>
+						<#if message.type = 'warning'><i class="ti-info"></i>&nbsp;</#if>
+						<#if message.type = 'error'><i class="ti-close"></i>&nbsp;</#if>
+						<#if message.type = 'info'><i class="ti-info"></i>&nbsp;</#if>
+						<span class="smart-feedback-text">${message.summary?no_esc}</span>
+					</div>
+				</div>
+			</div>
+		</#if>
 </body>
 </html>
 </#macro>
